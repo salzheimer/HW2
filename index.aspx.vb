@@ -41,7 +41,7 @@ Partial Class index
             Dim postTaxDeductions As Decimal = txtAfterTaxDeduction.Text
 
             Dim taxes As Decimal
-            taxes = grossPay * TAX_RATE
+            taxes = (grossPay - preTaxDeduction) * TAX_RATE
 
             Dim payAfterTaxes As Decimal = (grossPay - preTaxDeduction) - taxes
 
