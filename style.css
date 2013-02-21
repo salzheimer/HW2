@@ -1,47 +1,70 @@
-﻿body 
+﻿body
 {
-    background-color:Teal;
+    background-color: Teal;
 }
 .content
 {
-    border-style:inset;
-    background-color:Aqua;
-       width:300px;
-       margin-left:360px;
+    border-style: inset;
+    background-color: Aqua;
+    width: 400px;
+    margin-left: 360px;
 }
 .btn
 {
-    padding:10px;    
+    padding: 10px;
 }
 .netPay
 {
-    padding:10px;
+    color:Red;
+   
+    text-decoration:underline;
+    width:300px;
+    float:left;
+    padding: 10px;
 }
 #wage
 {
-    padding:10px;    
+    padding: 10px;
+    width:300px;
 }
 #hours
 {
-    padding:10px;    
+       width:300px;
+    padding: 10px;
 }
 #grossPay
 {
-    padding:10px;    
+       width:300px;
+    padding: 10px;
+    float:left;
 }
 #beforeTaxDeduc
 {
-    padding:10px;    
+       width:300px;
+    padding: 10px;
 }
 #taxablePay
 {
-    padding:10px;    
+       width:300px;
+    padding: 10px;
 }
 #taxRate
 {
-    padding:10px;    
+    float:left;
+       width:300px;
+    padding: 10px;
 }
 #afterTaxDeduc
+{  
+     width:300px;
+    padding: 10px;
+}
+.label, .entry
 {
-    padding:10px;    
+    width: 150px;
+    float: left;
+}
+#buttons
+{
+    width:300px;    
 }

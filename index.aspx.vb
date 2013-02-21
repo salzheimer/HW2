@@ -1,4 +1,5 @@
-﻿
+﻿Imports System.Web
+
 Partial Class index
     Inherits System.Web.UI.Page
 
@@ -9,12 +10,20 @@ Partial Class index
     Function CalculatePay() As Decimal
         Dim result As Decimal = 0
         If ((txtWage.Text <> "") And (txtHoursWorked.Text <> "")) Then
-            result = txtHoursWorked.Text * txtHoursWorked.Text
+            result = txtWage.Text * txtHoursWorked.Text
 
         End If
         Return result
 
     End Function
+    Protected Sub txtHoursWorked_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtHoursWorked.TextChanged
+        lblGrossPay.Text = "Gross Pay= " + CalculatePay.ToString("c")
+
+    End Sub
+    Protected Sub txtPreTaxDeduction_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtPreTaxDeduction.TextChanged
+        lblTaxablePay.Text = "Taxable income " & FormatCurrency(CalculatePay() - txtPreTaxDeduction.Text)
+        lblTaxRate.Text = "Tax rate " & FormatPercent(TAX_RATE, 2)
+    End Sub
 
     Protected Sub btnCalculateNetPay_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnCalculateNetPay.Click
         'calculate gross pay
@@ -47,5 +56,8 @@ Partial Class index
         txtHoursWorked.Text = ""
         txtPreTaxDeduction.Text = ""
         txtWage.Text = ""
+        lblTaxablePay.Text = ""
+        lblGrossPay.Text = ""
+        lblTaxRate.Text = ""
     End Sub
 End Class
